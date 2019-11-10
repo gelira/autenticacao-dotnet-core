@@ -6,6 +6,8 @@ namespace Autenticacao.Entities
     {
         public DbSet<User> Users;
 
+        public DatabaseContext() { }
+
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder) 
