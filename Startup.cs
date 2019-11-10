@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Autenticacao.Entities;
 using Autenticacao.Helpers;
+using Autenticacao.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -57,6 +58,7 @@ namespace Autenticacao
             });
             services.AddEntityFrameworkNpgsql().AddDbContext<DatabaseContext>(
                 options => options.UseNpgsql(databaseConfig.ConnectionString));
+            services.AddScoped<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
