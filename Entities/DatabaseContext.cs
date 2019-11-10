@@ -4,7 +4,7 @@ namespace Autenticacao.Entities
 {
     public class DatabaseContext : DbContext
     {
-        public DbSet<User> Users;
+        public DbSet<User> Users { get; set; }
 
         public DatabaseContext() { }
 
