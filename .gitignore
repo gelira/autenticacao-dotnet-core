@@ -2,3 +2,4 @@ bin
 obj
 testes
 Migrations
+.vscode/settings.json
