@@ -7,12 +7,14 @@ namespace Autenticacao.Helpers
         public string Database { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+        public string Pooling { get; set; }
 
         public string ConnectionString 
         {
             get => string.Format(
-                "Host={0};Port={1};Database={2};Username={3};Password={4}",
-                Host, Port, Database, Username, Password);
+                "Host={0};Port={1};Database={2};Username={3};Password={4};Pooling={5}",
+                Host, Port, Database, Username, Password,
+                (Pooling == "1") ? "true" : "false");
         }
     }
 }
